@@ -54,6 +54,7 @@ const server = http.createServer((request, response) => {
     case '/img/icons8-molecule-icongeek26-linear-colour-16.png':
     case '/img/icons8-molecule-icongeek26-linear-colour-32.png':
     case '/img/icons8-molecule-icongeek26-linear-colour-96.png':
+    case '/img/audio-icon.png':
         response.statusCode = 200;
         response.setHeader('Content-Type', 'image/png');
         content = fs.readFileSync(`client${path}`);

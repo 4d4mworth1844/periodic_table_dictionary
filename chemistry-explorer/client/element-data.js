@@ -3,7 +3,7 @@
  * @module {Map} elementData
  */
 export default new Map([
-    [1,   { symbol: 'H',  name: 'Hydrogen',      weight:   1.00794, period: 1, group:  1,   block: 's', density:  0.071, melts: -259.3,  boils: -252.9,  crust: 1.40e-3,  type: 'Other Nonmetal' }],
+    [1,   { symbol: 'H',  name: 'Hydrogen',      weight:   1.00794, period: 1, group:  1,   block: 's', density:  0.071, melts: -259.3,  boils: -252.9,  crust: 1.40e-3,  type: 'Other Nonmetal', audioSrc: '/periodic_table_dictionary/chemistry-explorer/client/audio/H.mp3' }],
     [2,   { symbol: 'He', name: 'Helium',        weight:   4.0026,  period: 1, group: 18,   block: 's', density:  0.126, melts: null,    boils: -268.9,  crust:    8e-9,  type: 'Noble Gas' }],
     [3,   { symbol: 'Li', name: 'Lithium',       weight:   6.939,   period: 2, group:  1,   block: 's', density:  0.53,  melts:  180.6,  boils: 1342,    crust:  2.0e-5,  type: 'Alkali Metal' }],
     [4,   { symbol: 'Be', name: 'Beryllium',     weight:   9.0122,  period: 2, group:  2,   block: 's', density:  1.85,  melts: 1289,    boils: 2472,    crust:  2.8e-6,  type: 'Alkaline Earth Metal' }],

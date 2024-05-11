@@ -77,6 +77,11 @@ export default class ElementView {
         return (density) ? `${density} g/cm<sup>3</sup>` : 'Unknown';
     }
 
+    static playMusic(audioSrc) {
+        let audio = new Audio(audioSrc);
+        console.log(audioSrc);
+        audio.play()
+    }
     /**
      * Format element data for display.
      *
@@ -84,6 +89,7 @@ export default class ElementView {
      * @param {boolean} [link=false] - Optional, whether to return a link
      * @returns {string} HTML: inline text
      */
+    
     static formatElement(protons, link = false) {
         const element = elementData.get(protons);
 
@@ -91,7 +97,30 @@ export default class ElementView {
         html += `<span class="symbol">${element.symbol}</span>`;
         html += `<span class="name"><br>${element.name}</span>`;
         html += `<span class="weight"><br>${ElementView.formatWeight(element.weight)}</span>`;
-
+        html += `<button id=${element.symbol} class=${element.name}>Audio</button>`;
+        console.log(typeof(element.audioSrc))
+        let symbolId = document.getElementById('tmp');
+        // symbolId.attribute = element.symbol; 
+        console.log(element.symbol)
+        console.log(symbolId);
+        // symbolId.addEventListener("click", function(){
+        //     let audio = new Audio(element.audioSrc);
+        //     console.log(audioSrc);
+        //     audio.play()
+        // });
+        // play.addEventListener("click", playMusic);
+        // $("#" + element.symbol).click(() => {
+        //     let audio = new Audio(element.audioSrc);
+        //     console.log("#" + element.symbol)
+        //     console.log(audioSrc);
+        //     audio.play()
+        // })
+        
+        
+        // html += `<button class="custom-button" onclick="handleButtonClick('${element.audioSrc}')">Audio</button>`;
+        
+        
+    
         if (link) {
             html = `<a href="?protons=${protons}">${html}<span class="link"></span></a>`;
         }
@@ -102,6 +131,8 @@ export default class ElementView {
 
         return html;
     }
+
+    
 
     /**
      * Format plain text that contains scientific notation, for display to HTML.
